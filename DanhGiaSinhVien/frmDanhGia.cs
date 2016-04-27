@@ -17,20 +17,16 @@ namespace NhanXetSinhVien
         {
             InitializeComponent();
             username = _username;
-            this.Text = "Quản Lý điểm rèn luyện sinh viên-" + username;
+            //this.Text = "Quản Lý điểm rèn luyện sinh viên-" + username;
 
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
             KhoiTaoForm();
-
         }
         private void thoat_Click(object sender, EventArgs e)
         {
-            frmDangNhap frm = new frmDangNhap();
-            frm.Show();
             this.Hide();
 
         }

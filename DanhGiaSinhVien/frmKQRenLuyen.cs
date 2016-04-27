@@ -405,6 +405,12 @@ namespace NhanXetSinhVien
             {
                 dicTIEUCHUAN[tieuchuan.MATIECHUAN] = tieuchuan;
             }
+            cbochonsv_SelectedIndexChanged(sender, e);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

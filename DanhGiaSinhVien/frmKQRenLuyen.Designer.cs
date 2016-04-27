@@ -45,15 +45,22 @@
             this.btnLuu = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(12, 37);
+            this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(1061, 157);
             this.dataGridView1.TabIndex = 0;
             // 
@@ -138,7 +145,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(94, 14);
+            this.label8.Location = new System.Drawing.Point(13, 9);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(51, 13);
             this.label8.TabIndex = 2;
@@ -147,7 +154,7 @@
             // cbochonsv
             // 
             this.cbochonsv.FormattingEnabled = true;
-            this.cbochonsv.Location = new System.Drawing.Point(166, 11);
+            this.cbochonsv.Location = new System.Drawing.Point(85, 6);
             this.cbochonsv.Margin = new System.Windows.Forms.Padding(2);
             this.cbochonsv.Name = "cbochonsv";
             this.cbochonsv.Size = new System.Drawing.Size(202, 21);
@@ -156,7 +163,7 @@
             // 
             // btnDanhGia
             // 
-            this.btnDanhGia.Location = new System.Drawing.Point(12, 214);
+            this.btnDanhGia.Location = new System.Drawing.Point(12, 209);
             this.btnDanhGia.Name = "btnDanhGia";
             this.btnDanhGia.Size = new System.Drawing.Size(75, 23);
             this.btnDanhGia.TabIndex = 9;
@@ -169,7 +176,7 @@
             this.txtTieuchi.Location = new System.Drawing.Point(105, 200);
             this.txtTieuchi.Multiline = true;
             this.txtTieuchi.Name = "txtTieuchi";
-            this.txtTieuchi.Size = new System.Drawing.Size(330, 123);
+            this.txtTieuchi.Size = new System.Drawing.Size(330, 115);
             this.txtTieuchi.TabIndex = 22;
             // 
             // txtTieuchuan
@@ -177,7 +184,7 @@
             this.txtTieuchuan.Location = new System.Drawing.Point(441, 200);
             this.txtTieuchuan.Multiline = true;
             this.txtTieuchuan.Name = "txtTieuchuan";
-            this.txtTieuchuan.Size = new System.Drawing.Size(333, 123);
+            this.txtTieuchuan.Size = new System.Drawing.Size(333, 115);
             this.txtTieuchuan.TabIndex = 23;
             // 
             // txtKetQua
@@ -187,12 +194,12 @@
             this.txtKetQua.Location = new System.Drawing.Point(780, 200);
             this.txtKetQua.Multiline = true;
             this.txtKetQua.Name = "txtKetQua";
-            this.txtKetQua.Size = new System.Drawing.Size(293, 123);
+            this.txtKetQua.Size = new System.Drawing.Size(293, 115);
             this.txtKetQua.TabIndex = 24;
             // 
             // btnLuu
             // 
-            this.btnLuu.Location = new System.Drawing.Point(12, 254);
+            this.btnLuu.Location = new System.Drawing.Point(12, 237);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(75, 23);
             this.btnLuu.TabIndex = 25;
@@ -212,17 +219,34 @@
             // 
             // dataGridView2
             // 
+            this.dataGridView2.AllowUserToAddRows = false;
+            this.dataGridView2.AllowUserToDeleteRows = false;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Location = new System.Drawing.Point(12, 321);
+            this.dataGridView2.MultiSelect = false;
             this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.ReadOnly = true;
+            this.dataGridView2.RowHeadersVisible = false;
+            this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView2.Size = new System.Drawing.Size(1061, 157);
             this.dataGridView2.TabIndex = 0;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(13, 264);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 26;
+            this.button2.Text = "Thoát";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // frmKQRenLuyen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1084, 480);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnLuu);
             this.Controls.Add(this.txtKetQua);
@@ -241,7 +265,10 @@
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.dataGridView1);
             this.Name = "frmKQRenLuyen";
-            this.Text = "frmKQRenLuyen";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "Kết Quả Rèn Luyện";
             this.Load += new System.EventHandler(this.frmKQRenLuyen_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
@@ -269,5 +296,6 @@
         private System.Windows.Forms.Button btnLuu;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.Button button2;
     }
 }

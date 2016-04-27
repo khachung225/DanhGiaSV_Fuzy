@@ -67,7 +67,7 @@
             // đăngNhậpToolStripMenuItem
             // 
             this.đăngNhậpToolStripMenuItem.Name = "đăngNhậpToolStripMenuItem";
-            this.đăngNhậpToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.đăngNhậpToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
             this.đăngNhậpToolStripMenuItem.Text = "Đăng Nhập";
             this.đăngNhậpToolStripMenuItem.Click += new System.EventHandler(this.đăngNhậpToolStripMenuItem_Click);
             // 
@@ -76,6 +76,7 @@
             this.thoátToolStripMenuItem.Name = "thoátToolStripMenuItem";
             this.thoátToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.thoátToolStripMenuItem.Text = "Thoát";
+            this.thoátToolStripMenuItem.Click += new System.EventHandler(this.thoátToolStripMenuItem_Click);
             // 
             // danhSáchToolStripMenuItem
             // 
@@ -91,12 +92,14 @@
             this.giáoViênToolStripMenuItem.Name = "giáoViênToolStripMenuItem";
             this.giáoViênToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.giáoViênToolStripMenuItem.Text = "Giáo Viên";
+            this.giáoViênToolStripMenuItem.Click += new System.EventHandler(this.giáoViênToolStripMenuItem_Click);
             // 
             // sinhViênToolStripMenuItem
             // 
             this.sinhViênToolStripMenuItem.Name = "sinhViênToolStripMenuItem";
             this.sinhViênToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.sinhViênToolStripMenuItem.Text = "Sinh Viên";
+            this.sinhViênToolStripMenuItem.Click += new System.EventHandler(this.sinhViênToolStripMenuItem_Click);
             // 
             // nToolStripMenuItem
             // 
@@ -109,7 +112,8 @@
             // 
             this.kQRenLuyenToolStripMenuItem.Name = "kQRenLuyenToolStripMenuItem";
             this.kQRenLuyenToolStripMenuItem.Size = new System.Drawing.Size(90, 20);
-            this.kQRenLuyenToolStripMenuItem.Text = "KQ Ren luyen";
+            this.kQRenLuyenToolStripMenuItem.Text = "KQ Rèn luyện";
+            this.kQRenLuyenToolStripMenuItem.Click += new System.EventHandler(this.kQRenLuyenToolStripMenuItem_Click);
             // 
             // timer1
             // 
@@ -125,6 +129,8 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainForm";
             this.Text = "Chương trình đánh giá rèn luyện Sinh Viên";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Activated += new System.EventHandler(this.MainForm_Activated);
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

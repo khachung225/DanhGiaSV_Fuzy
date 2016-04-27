@@ -43,8 +43,8 @@ namespace DatabaseDAL.DataLayer
 
 			try
 			{
-                
-				sqlCommand.Parameters.Add(new SqlParameter("@MaGv", SqlDbType.Int, 4, ParameterDirection.Output, false, 0, 0, "", DataRowVersion.Proposed, businessObject.MaGv));
+
+                sqlCommand.Parameters.Add(new SqlParameter("@MaGv", SqlDbType.NVarChar, 50, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, businessObject.MaGv));
 				sqlCommand.Parameters.Add(new SqlParameter("@TenGiaoVien", SqlDbType.NVarChar, 100, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, businessObject.TenGiaoVien));
 				sqlCommand.Parameters.Add(new SqlParameter("@Sex", SqlDbType.Int, 4, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, businessObject.Sex));
 				sqlCommand.Parameters.Add(new SqlParameter("@Adress", SqlDbType.NVarChar, 150, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, businessObject.Adress));
@@ -55,7 +55,6 @@ namespace DatabaseDAL.DataLayer
 				MainConnection.Open();
 				
 				sqlCommand.ExecuteNonQuery();
-                businessObject.MaGv = (int)sqlCommand.Parameters["@MaGv"].Value;
 
 				return true;
 			}
@@ -86,8 +85,8 @@ namespace DatabaseDAL.DataLayer
 
             try
             {
-                
-				sqlCommand.Parameters.Add(new SqlParameter("@MaGv", SqlDbType.Int, 4, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, businessObject.MaGv));
+
+                sqlCommand.Parameters.Add(new SqlParameter("@MaGv", SqlDbType.NVarChar, 50, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, businessObject.MaGv));
 				sqlCommand.Parameters.Add(new SqlParameter("@TenGiaoVien", SqlDbType.NVarChar, 100, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, businessObject.TenGiaoVien));
 				sqlCommand.Parameters.Add(new SqlParameter("@Sex", SqlDbType.Int, 4, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, businessObject.Sex));
 				sqlCommand.Parameters.Add(new SqlParameter("@Adress", SqlDbType.NVarChar, 150, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, businessObject.Adress));
@@ -328,7 +327,7 @@ namespace DatabaseDAL.DataLayer
         {
 
 
-				businessObject.MaGv = dataReader.GetInt32(dataReader.GetOrdinal(GIAOVIEN.GIAOVIENFields.MaGv.ToString()));
+            businessObject.MaGv = dataReader.GetString(dataReader.GetOrdinal(GIAOVIEN.GIAOVIENFields.MaGv.ToString()));
 
 				businessObject.TenGiaoVien = dataReader.GetString(dataReader.GetOrdinal(GIAOVIEN.GIAOVIENFields.TenGiaoVien.ToString()));
 
@@ -365,5 +364,6 @@ namespace DatabaseDAL.DataLayer
 
         #endregion
 
+	    
 	}
 }

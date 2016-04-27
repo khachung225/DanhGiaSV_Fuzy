@@ -25,7 +25,7 @@ namespace DatabaseDAL.Entities
 		{
 		}
 
-		public GIAOVIEN(int maGv, string tenGiaoVien, int sex, string adress, string userLogin, string password)
+        public GIAOVIEN(string maGv, string tenGiaoVien, int sex, string adress, string userLogin, string password)
 		{
 			_maGv = maGv;
 			_tenGiaoVien = tenGiaoVien;
@@ -48,7 +48,7 @@ namespace DatabaseDAL.Entities
 
 		#region Data Members
 
-		private int _maGv;
+        private string _maGv;
 		private string _tenGiaoVien;
 		private int _sex;
 		private string _adress;
@@ -59,7 +59,7 @@ namespace DatabaseDAL.Entities
 
 		#region Properties
 
-		public int  MaGv
+        public string MaGv
 		{
 			 get { return _maGv; }
 			 set { _maGv = value; }

@@ -39,8 +39,50 @@ namespace NhanXetSinhVien
         //nhan set
         private void nToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var dagia = new frmDanhGia();
-            dagia.ShowDialog();
+            if (AppGlobal.Giaovien != null)
+            {
+                var dagia = new frmDanhGia(AppGlobal.Giaovien.MaGv);
+                dagia.Show();
+                dagia.TopMost = true;
+            }
+            else
+            {
+                đăngNhậpToolStripMenuItem_Click(sender, e);
+            }
+        }
+
+        private void thoátToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+        private void kQRenLuyenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var frm = new frmKQRenLuyen();
+            frm.Show();
+            frm.TopMost = true;
+        }
+
+        private void MainForm_Activated(object sender, EventArgs e)
+        {
+            if (AppGlobal.Giaovien != null)
+            {
+                if(!this.Text.Contains(" - GV:"))
+                    this.Text += @" - GV: " + AppGlobal.Giaovien.TenGiaoVien;
+            }
+        }
+
+        private void giáoViênToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var gv = new ShowListData(1);
+            gv.Show();
+            gv.TopMost = true;
+        }
+
+        private void sinhViênToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var gv = new ShowListData(2);
+            gv.Show();
+            gv.TopMost = true;
         }
     }
 }
