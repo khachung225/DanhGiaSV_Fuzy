@@ -295,7 +295,7 @@ namespace NhanXetSinhVien
             kqc = (tchuan1c + tchuan2c + tchuan3c + tchuan4c + tchuan5c) / 5;
 
             s3 = "KETQUA" + "(" + kqa + "," + kqb + "," + kqc + ")";
-            s3 += "\r\n" + "Kết quả rèn luyện  ";
+            s3 += "\r\n" + "Kết quả tốt nghiệp  ";
 
             if (kqb <= 3)
             {

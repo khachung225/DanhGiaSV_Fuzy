@@ -44,61 +44,27 @@ namespace NhanXetSinhVien
             cbochonsv.ValueMember = "MASV";
 
 
-            tchi11.DataSource = tb1.ToList();
-            tchi11.DisplayMember = "TENTIEUCHUAN";
-            tchi11.ValueMember = "MATIECHUAN";
-
-            tc12.DataSource = tb1.ToList();
-            tc12.DisplayMember = "TENTIEUCHUAN";
-            tc12.ValueMember = "MATIECHUAN";
-
-            tc13.DataSource = tb1.ToList();
-            tc13.DisplayMember = "TENTIEUCHUAN";
-            tc13.ValueMember = "MATIECHUAN";
-
-            tc21.DataSource = tb1.ToList();
-            tc21.DisplayMember = "TENTIEUCHUAN";
-            tc21.ValueMember = "MATIECHUAN";
-
+            tchi21.DataSource = tb1.ToList();
+            tchi21.DisplayMember = "TENTIEUCHUAN";
+            tchi21.ValueMember = "MATIECHUAN";
 
             tc22.DataSource = tb1.ToList();
             tc22.DisplayMember = "TENTIEUCHUAN";
             tc22.ValueMember = "MATIECHUAN";
 
+            tc23.DataSource = tb1.ToList();
+            tc23.DisplayMember = "TENTIEUCHUAN";
+            tc23.ValueMember = "MATIECHUAN";
 
-            tchi31.DataSource = tb1.ToList();
-            tchi31.DisplayMember = "TENTIEUCHUAN";
-            tchi31.ValueMember = "MATIECHUAN";
-
-            tchi32.DataSource = tb1.ToList();
-            tchi32.DisplayMember = "TENTIEUCHUAN";
-            tchi32.ValueMember = "MATIECHUAN";
-
-            tchi33.DataSource = tb1.ToList();
-            tchi33.DisplayMember = "TENTIEUCHUAN";
-            tchi33.ValueMember = "MATIECHUAN";
+            tc11.DataSource = tb1.ToList();
+            tc11.DisplayMember = "TENTIEUCHUAN";
+            tc11.ValueMember = "MATIECHUAN";
 
 
-            tchi41.DataSource = tb1.ToList();
-            tchi41.DisplayMember = "TENTIEUCHUAN";
-            tchi41.ValueMember = "MATIECHUAN";
-            tchi42.DataSource = tb1.ToList();
-            tchi42.DisplayMember = "TENTIEUCHUAN";
-            tchi42.ValueMember = "MATIECHUAN";
-            tchi43.DataSource = tb1.ToList();
-            tchi43.DisplayMember = "TENTIEUCHUAN";
-            tchi43.ValueMember = "MATIECHUAN";
-
-            tchi51.DataSource = tb1.ToList();
-            tchi51.DisplayMember = "TENTIEUCHUAN";
-            tchi51.ValueMember = "MATIECHUAN";
-            tchi52.DataSource = tb1.ToList();
-            tchi52.DisplayMember = "TENTIEUCHUAN";
-            tchi52.ValueMember = "MATIECHUAN";
-            tchi53.DataSource = tb1.ToList();
-            tchi53.DisplayMember = "TENTIEUCHUAN";
-            tchi53.ValueMember = "MATIECHUAN";
-
+            tc12.DataSource = tb1.ToList();
+            tc12.DisplayMember = "TENTIEUCHUAN";
+            tc12.ValueMember = "MATIECHUAN";
+            
         }
 
         KETQUADANHGIADao KETQUADANHGIA = new KETQUADANHGIADao();
@@ -110,12 +76,8 @@ namespace NhanXetSinhVien
             flag = KETQUADANHGIA.SelectByMasv(username, cbochonsv.SelectedValue.ToString());
 
             KETQUADANHGIA kq1 = new KETQUADANHGIA(cbochonsv.SelectedValue.ToString(), username,
-                (int)tchi11.SelectedValue, (int)tc12.SelectedValue, (int)tc13.SelectedValue,
-                (int)tc21.SelectedValue, (int)tc22.SelectedValue,
-                (int)tchi31.SelectedValue, (int)tchi32.SelectedValue, (int)tchi33.SelectedValue,
-                (int)tchi41.SelectedValue, (int)tchi42.SelectedValue, (int)tchi43.SelectedValue,
-                (int)tchi51.SelectedValue, (int)tchi52.SelectedValue, (int)tchi53.SelectedValue
-                );
+                  (int)tc11.SelectedValue, (int)tc12.SelectedValue,
+                (int)tchi21.SelectedValue, (int)tc22.SelectedValue, (int)tc23.SelectedValue);
             int k = -1;
             if (flag > 0)
             {
