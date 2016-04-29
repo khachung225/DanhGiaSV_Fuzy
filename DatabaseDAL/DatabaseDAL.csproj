@@ -68,9 +68,9 @@
     <Compile Include="DataLayer\KETQUADANHGIASql.cs" />
     <Compile Include="Entities\KETQUADANHGIA.cs" />
     <Compile Include="DAO\KETQUADANHGIADao.cs" />
-    <Compile Include="DataLayer\KETQUARENLUYENSql.cs" />
-    <Compile Include="Entities\KETQUARENLUYEN.cs" />
-    <Compile Include="DAO\KETQUARENLUYENDao.cs" />
+    <Compile Include="DataLayer\KETQUATOTNGHIEPSql.cs" />
+    <Compile Include="Entities\KETQUATOTNGHIEP.cs" />
+    <Compile Include="DAO\KETQUATOTNGHIEPDao.cs" />
     <Compile Include="DataLayer\NHANDANHGIASql.cs" />
     <Compile Include="Entities\NHANDANHGIA.cs" />
     <Compile Include="DAO\NHANDANHGIADao.cs" />

@@ -24,6 +24,7 @@ namespace NhanXetSinhVien
         private void Form1_Load(object sender, EventArgs e)
         {
             KhoiTaoForm();
+            chonsv_SelectedIndexChanged(sender,e);
         }
         private void thoat_Click(object sender, EventArgs e)
         {
@@ -77,11 +78,10 @@ namespace NhanXetSinhVien
 
             KETQUADANHGIA kq1 = new KETQUADANHGIA(cbochonsv.SelectedValue.ToString(), username,
                   (int)tc11.SelectedValue, (int)tc12.SelectedValue,
-                (int)tchi21.SelectedValue, (int)tc22.SelectedValue, (int)tc23.SelectedValue);
+                (int)tchi21.SelectedValue, (int)tc22.SelectedValue, (int)tc23.SelectedValue,0,0,0,0,0,0,0,0,0);
             int k = -1;
             if (flag > 0)
             {
-
                 KETQUADANHGIA.Update(kq1);
             }
             else
@@ -91,7 +91,17 @@ namespace NhanXetSinhVien
 
         private void chonsv_SelectedIndexChanged(object sender, EventArgs e)
         {
+            var listketqia = KETQUADANHGIA.SelectByMasvMaGv(username, cbochonsv.SelectedValue.ToString());
+            if (listketqia != null && listketqia.Count > 0)
+            {
+                var kqsv = listketqia[0];
+                tc11.SelectedValue = kqsv.Tc11;
+                tc12.SelectedValue = kqsv.Tc12;
 
+                tchi21.SelectedValue = kqsv.Tc13;
+                tc22.SelectedValue = kqsv.Tc21;
+                tc23.SelectedValue = kqsv.Tc22;
+            }
         }
 
         //private void btnThuchien_Click(object sender, EventArgs e)

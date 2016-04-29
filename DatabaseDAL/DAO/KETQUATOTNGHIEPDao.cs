@@ -7,20 +7,20 @@ using DatabaseDAL.Entities;
 
 namespace DatabaseDAL.DAO
 {
-    public class KETQUARENLUYENDao
+    public class KETQUATOTNGHIEPDao
     {
 
         #region Data Members
 
-        private KETQUARENLUYENSql _dataObject = null;
+        private KETQUATOTNGHIEPSql _dataObject = null;
 
         #endregion
 
         #region Constructor
 
-        public KETQUARENLUYENDao()
+        public KETQUATOTNGHIEPDao()
         {
-            _dataObject = new KETQUARENLUYENSql();
+            _dataObject = new KETQUATOTNGHIEPSql();
         }
 
         #endregion
@@ -32,7 +32,7 @@ namespace DatabaseDAL.DAO
         /// </summary>
         /// <param name="businessObject">KETQUARENLUYEN object</param>
         /// <returns>true for successfully saved</returns>
-        public bool Insert(KETQUARENLUYEN businessObject)
+        public bool Insert(KETQUATOTNGHIEP businessObject)
         {
             return _dataObject.Insert(businessObject);
         }
@@ -42,7 +42,7 @@ namespace DatabaseDAL.DAO
         /// </summary>
         /// <param name="businessObject">KETQUARENLUYEN object</param>
         /// <returns>true for successfully saved</returns>
-        public bool Update(KETQUARENLUYEN businessObject)
+        public bool Update(KETQUATOTNGHIEP businessObject)
         {
             return _dataObject.Update(businessObject);
         }
@@ -52,7 +52,7 @@ namespace DatabaseDAL.DAO
         /// </summary>
         /// <param name="key">primary key</param>
         /// <returns>KETQUARENLUYEN</returns>
-        public KETQUARENLUYEN GetByPrimaryKey(string key)
+        public KETQUATOTNGHIEP GetByPrimaryKey(string key)
         {
             return _dataObject.SelectByPrimaryKey(key); 
         }
@@ -61,7 +61,7 @@ namespace DatabaseDAL.DAO
         /// get list of all KETQUARENLUYENs
         /// </summary>
         /// <returns>list</returns>
-        public List<KETQUARENLUYEN> GetAll()
+        public List<KETQUATOTNGHIEP> GetAll()
         {
             return _dataObject.SelectAll(); 
         }
@@ -72,7 +72,7 @@ namespace DatabaseDAL.DAO
         /// <param name="fieldName">field name</param>
         /// <param name="value">value</param>
         /// <returns>list</returns>
-        public List<KETQUARENLUYEN> GetAllBy(KETQUARENLUYEN.KETQUARENLUYENFields fieldName, object value)
+        public List<KETQUATOTNGHIEP> GetAllBy(KETQUATOTNGHIEP.KETQUATOTNGHIEPFields fieldName, object value)
         {
             return _dataObject.SelectByField(fieldName.ToString(), value);  
         }
@@ -93,7 +93,7 @@ namespace DatabaseDAL.DAO
         /// <param name="fieldName">field name</param>
         /// <param name="value">value</param>
         /// <returns>true for successfully deleted</returns>
-        public bool Delete(KETQUARENLUYEN.KETQUARENLUYENFields fieldName, object value)
+        public bool Delete(KETQUATOTNGHIEP.KETQUATOTNGHIEPFields fieldName, object value)
         {
             return _dataObject.DeleteByField(fieldName.ToString(), value); 
         }

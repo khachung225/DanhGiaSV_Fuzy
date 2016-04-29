@@ -57,7 +57,7 @@ namespace DatabaseDAL.DataLayer
             // Get connection string from Config File and set to the connection
             _mainConnection.ConnectionString = ConfigurationManager.AppSettings["Main.ConnectionString"];
             if (string.IsNullOrEmpty(_mainConnection.ConnectionString))
-                _mainConnection.ConnectionString = "Data Source=.;Initial Catalog=DIEMRENLUYEN;User Id = lemon;Password = admin";
+                _mainConnection.ConnectionString = "Data Source=.;Initial Catalog=DanhGiaTotNghiep;User Id = lemon;Password = admin";
             _isDisposed = false;
         }
 

@@ -43,7 +43,6 @@
             this.tc12 = new System.Windows.Forms.ComboBox();
             this.tc11 = new System.Windows.Forms.ComboBox();
             this.thuchien = new System.Windows.Forms.Button();
-            this.xemds = new System.Windows.Forms.Button();
             this.thoat = new System.Windows.Forms.Button();
             this.grb1.SuspendLayout();
             this.grp2.SuspendLayout();
@@ -198,7 +197,7 @@
             // 
             // thuchien
             // 
-            this.thuchien.Location = new System.Drawing.Point(51, 184);
+            this.thuchien.Location = new System.Drawing.Point(94, 185);
             this.thuchien.Margin = new System.Windows.Forms.Padding(2);
             this.thuchien.Name = "thuchien";
             this.thuchien.Size = new System.Drawing.Size(81, 28);
@@ -207,21 +206,9 @@
             this.thuchien.UseVisualStyleBackColor = true;
             this.thuchien.Click += new System.EventHandler(this.thuchien_Click);
             // 
-            // xemds
-            // 
-            this.xemds.Location = new System.Drawing.Point(147, 184);
-            this.xemds.Margin = new System.Windows.Forms.Padding(2);
-            this.xemds.Name = "xemds";
-            this.xemds.Size = new System.Drawing.Size(81, 28);
-            this.xemds.TabIndex = 16;
-            this.xemds.Text = "Xét rèn luyện";
-            this.xemds.UseVisualStyleBackColor = true;
-            this.xemds.Visible = false;
-            this.xemds.Click += new System.EventHandler(this.xemds_Click);
-            // 
             // thoat
             // 
-            this.thoat.Location = new System.Drawing.Point(240, 184);
+            this.thoat.Location = new System.Drawing.Point(186, 185);
             this.thoat.Margin = new System.Windows.Forms.Padding(2);
             this.thoat.Name = "thoat";
             this.thoat.Size = new System.Drawing.Size(81, 28);
@@ -236,7 +223,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(394, 224);
             this.Controls.Add(this.thoat);
-            this.Controls.Add(this.xemds);
             this.Controls.Add(this.thuchien);
             this.Controls.Add(this.grp2);
             this.Controls.Add(this.grb1);
@@ -272,7 +258,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button thuchien;
-        private System.Windows.Forms.Button xemds;
         private System.Windows.Forms.Button thoat;
         private System.Windows.Forms.ComboBox tc23;
         private System.Windows.Forms.ComboBox tc22;

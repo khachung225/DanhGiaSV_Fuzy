@@ -10,7 +10,7 @@ namespace DatabaseDAL.DataLayer
 	/// <summary>
 	/// Data access layer class for KETQUARENLUYEN
 	/// </summary>
-	class KETQUARENLUYENSql : DataLayerBase 
+	class KETQUATOTNGHIEPSql : DataLayerBase 
 	{
 
         #region Constructor
@@ -18,7 +18,7 @@ namespace DatabaseDAL.DataLayer
 		/// <summary>
 		/// Class constructor
 		/// </summary>
-		public KETQUARENLUYENSql()
+		public KETQUATOTNGHIEPSql()
 		{
 			// Nothing for now.
 		}
@@ -32,10 +32,10 @@ namespace DatabaseDAL.DataLayer
         /// </summary>
 		/// <param name="businessObject">business object</param>
 		/// <returns>true of successfully insert</returns>
-		public bool Insert(KETQUARENLUYEN businessObject)
+		public bool Insert(KETQUATOTNGHIEP businessObject)
 		{
 			SqlCommand	sqlCommand = new SqlCommand();
-            sqlCommand.CommandText = "dbo.[sp_KetQuaRenLuyen_Insert]";
+            sqlCommand.CommandText = "dbo.[sp_KETQUATOTNGHIEP_Insert]";
 			sqlCommand.CommandType = CommandType.StoredProcedure;
 
 			// Use connection object of base class
@@ -72,10 +72,10 @@ namespace DatabaseDAL.DataLayer
         /// </summary>
         /// <param name="businessObject">business object</param>
         /// <returns>true for successfully updated</returns>
-        public bool Update(KETQUARENLUYEN businessObject)
+        public bool Update(KETQUATOTNGHIEP businessObject)
         {
             SqlCommand sqlCommand = new SqlCommand();
-            sqlCommand.CommandText = "dbo.[sp_KetQuaRenLuyen_Update]";
+            sqlCommand.CommandText = "dbo.[sp_KETQUATOTNGHIEP_Update]";
             sqlCommand.CommandType = CommandType.StoredProcedure;
 
             // Use connection object of base class
@@ -111,10 +111,10 @@ namespace DatabaseDAL.DataLayer
         /// </summary>
         /// <param name="keys">primary keys</param>
         /// <returns>KETQUARENLUYEN business object</returns>
-        public KETQUARENLUYEN SelectByPrimaryKey(string key)
+        public KETQUATOTNGHIEP SelectByPrimaryKey(string key)
         {
             SqlCommand sqlCommand = new SqlCommand();
-            sqlCommand.CommandText = "dbo.[sp_KetQuaRenLuyen_GetByID]"; //KETQUARENLUYEN_SelectByPrimaryKey
+            sqlCommand.CommandText = "dbo.[sp_KETQUATOTNGHIEP_GetByID]"; //KETQUARENLUYEN_SelectByPrimaryKey
             sqlCommand.CommandType = CommandType.StoredProcedure;
 
             // Use connection object of base class
@@ -132,7 +132,7 @@ namespace DatabaseDAL.DataLayer
 
                 if (dataReader.Read())
                 {
-                    KETQUARENLUYEN businessObject = new KETQUARENLUYEN();
+                    KETQUATOTNGHIEP businessObject = new KETQUATOTNGHIEP();
 
                     PopulateBusinessObjectFromReader(businessObject, dataReader);
 
@@ -159,10 +159,10 @@ namespace DatabaseDAL.DataLayer
         /// Select all rescords
         /// </summary>
         /// <returns>list of KETQUARENLUYEN</returns>
-        public List<KETQUARENLUYEN> SelectAll()
+        public List<KETQUATOTNGHIEP> SelectAll()
         {
             SqlCommand sqlCommand = new SqlCommand();
-            sqlCommand.CommandText = "dbo.[sp_KetQuaRenLuyen_GetAll]"; // KETQUARENLUYEN_SelectAll
+            sqlCommand.CommandText = "dbo.[sp_KETQUATOTNGHIEP_GetAll]"; // KETQUARENLUYEN_SelectAll
             sqlCommand.CommandType = CommandType.StoredProcedure;
 
             // Use connection object of base class
@@ -196,11 +196,11 @@ namespace DatabaseDAL.DataLayer
         /// <param name="fieldName">name of field</param>
         /// <param name="value">value of field</param>
         /// <returns>list of KETQUARENLUYEN</returns>
-        public List<KETQUARENLUYEN> SelectByField(string fieldName, object value)
+        public List<KETQUATOTNGHIEP> SelectByField(string fieldName, object value)
         {
 
             SqlCommand sqlCommand = new SqlCommand();
-            sqlCommand.CommandText = "dbo.[KETQUARENLUYEN_SelectByField]";
+            sqlCommand.CommandText = "dbo.[KETQUATOTNGHIEP_SelectByField]";
             sqlCommand.CommandType = CommandType.StoredProcedure;
 
             // Use connection object of base class
@@ -240,7 +240,7 @@ namespace DatabaseDAL.DataLayer
         public bool Delete(string key)
         {
             SqlCommand sqlCommand = new SqlCommand();
-            sqlCommand.CommandText = "dbo.[KETQUARENLUYEN_DeleteByPrimaryKey]";
+            sqlCommand.CommandText = "dbo.[KETQUATOTNGHIEP_DeleteByPrimaryKey]";
             sqlCommand.CommandType = CommandType.StoredProcedure;
 
             // Use connection object of base class
@@ -279,7 +279,7 @@ namespace DatabaseDAL.DataLayer
         public bool DeleteByField(string fieldName, object value)
         {
             SqlCommand sqlCommand = new SqlCommand();
-            sqlCommand.CommandText = "dbo.[KETQUARENLUYEN_DeleteByField]";
+            sqlCommand.CommandText = "dbo.[KETQUATOTNGHIEP_DeleteByField]";
             sqlCommand.CommandType = CommandType.StoredProcedure;
 
             // Use connection object of base class
@@ -319,22 +319,22 @@ namespace DatabaseDAL.DataLayer
         /// </summary>
         /// <param name="businessObject">business object</param>
         /// <param name="dataReader">data reader</param>
-        internal void PopulateBusinessObjectFromReader(KETQUARENLUYEN businessObject, IDataReader dataReader)
+        internal void PopulateBusinessObjectFromReader(KETQUATOTNGHIEP businessObject, IDataReader dataReader)
         {
 
 
-				businessObject.MASV = dataReader.GetString(dataReader.GetOrdinal(KETQUARENLUYEN.KETQUARENLUYENFields.MASV.ToString()));
+				businessObject.MASV = dataReader.GetString(dataReader.GetOrdinal(KETQUATOTNGHIEP.KETQUATOTNGHIEPFields.MASV.ToString()));
 
-				businessObject.HOTEN = dataReader.GetString(dataReader.GetOrdinal(KETQUARENLUYEN.KETQUARENLUYENFields.HOTEN.ToString()));
+				businessObject.HOTEN = dataReader.GetString(dataReader.GetOrdinal(KETQUATOTNGHIEP.KETQUATOTNGHIEPFields.HOTEN.ToString()));
 
-				if (!dataReader.IsDBNull(dataReader.GetOrdinal(KETQUARENLUYEN.KETQUARENLUYENFields.KETQUA.ToString())))
+				if (!dataReader.IsDBNull(dataReader.GetOrdinal(KETQUATOTNGHIEP.KETQUATOTNGHIEPFields.KETQUA.ToString())))
 				{
-					businessObject.KETQUA = dataReader.GetString(dataReader.GetOrdinal(KETQUARENLUYEN.KETQUARENLUYENFields.KETQUA.ToString()));
+					businessObject.KETQUA = dataReader.GetString(dataReader.GetOrdinal(KETQUATOTNGHIEP.KETQUATOTNGHIEPFields.KETQUA.ToString()));
 				}
 
-				if (!dataReader.IsDBNull(dataReader.GetOrdinal(KETQUARENLUYEN.KETQUARENLUYENFields.XEPLOAI.ToString())))
+				if (!dataReader.IsDBNull(dataReader.GetOrdinal(KETQUATOTNGHIEP.KETQUATOTNGHIEPFields.XEPLOAI.ToString())))
 				{
-					businessObject.XEPLOAI = dataReader.GetString(dataReader.GetOrdinal(KETQUARENLUYEN.KETQUARENLUYENFields.XEPLOAI.ToString()));
+					businessObject.XEPLOAI = dataReader.GetString(dataReader.GetOrdinal(KETQUATOTNGHIEP.KETQUATOTNGHIEPFields.XEPLOAI.ToString()));
 				}
 
 
@@ -345,14 +345,14 @@ namespace DatabaseDAL.DataLayer
         /// </summary>
         /// <param name="dataReader">data reader</param>
         /// <returns>list of KETQUARENLUYEN</returns>
-        internal List<KETQUARENLUYEN> PopulateObjectsFromReader(IDataReader dataReader)
+        internal List<KETQUATOTNGHIEP> PopulateObjectsFromReader(IDataReader dataReader)
         {
 
-            List<KETQUARENLUYEN> list = new List<KETQUARENLUYEN>();
+            List<KETQUATOTNGHIEP> list = new List<KETQUATOTNGHIEP>();
 
             while (dataReader.Read())
             {
-                KETQUARENLUYEN businessObject = new KETQUARENLUYEN();
+                KETQUATOTNGHIEP businessObject = new KETQUATOTNGHIEP();
                 PopulateBusinessObjectFromReader(businessObject, dataReader);
                 list.Add(businessObject);
             }

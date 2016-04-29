@@ -56,13 +56,18 @@ namespace DatabaseDAL.DAO
         {
             return _dataObject.SelectByPrimaryKey(key); 
         }
-        public int SelectByMasv(string _masvdanhgia, string _masv)
+        public int SelectByMasv(string masvdanhgia, string masv)
         {
-            var list = _dataObject.SelectByMasv(_masvdanhgia, _masv);
+            var list = _dataObject.SelectByMasv(masvdanhgia, masv);
             if (list == null)
                 return 0;
             if (list.Count > 0) return 1;
             return 0;
+        }
+
+        public List<KETQUADANHGIA> SelectByMasvMaGv(string masvdanhgia, string masv)
+        {
+            return _dataObject.SelectByMasv(masvdanhgia, masv);
         }
 
         public List<KETQUADANHGIA> GetAllKetQuaByMaSV(string _masvdanhgia)
