@@ -7,21 +7,21 @@ using DatabaseDAL.Entities;
 
 namespace DatabaseDAL.DataLayer
 {
-	/// <summary>
-	/// Data access layer class for KETQUADANHGIA
-	/// </summary>
-	class KETQUADANHGIASql : DataLayerBase 
-	{
+    /// <summary>
+    /// Data access layer class for KETQUADANHGIA
+    /// </summary>
+    class KETQUADANHGIASql : DataLayerBase
+    {
 
         #region Constructor
 
-		/// <summary>
-		/// Class constructor
-		/// </summary>
-		public KETQUADANHGIASql()
-		{
-			// Nothing for now.
-		}
+        /// <summary>
+        /// Class constructor
+        /// </summary>
+        public KETQUADANHGIASql()
+        {
+            // Nothing for now.
+        }
 
         #endregion
 
@@ -30,56 +30,65 @@ namespace DatabaseDAL.DataLayer
         /// <summary>
         /// insert new row in the table
         /// </summary>
-		/// <param name="businessObject">business object</param>
-		/// <returns>true of successfully insert</returns>
-		public bool Insert(KETQUADANHGIA businessObject)
-		{
-			SqlCommand	sqlCommand = new SqlCommand();
+        /// <param name="businessObject">business object</param>
+        /// <returns>true of successfully insert</returns>
+        public bool Insert(KETQUADANHGIA businessObject)
+        {
+            SqlCommand sqlCommand = new SqlCommand();
             sqlCommand.CommandText = "dbo.[sp_KetQuaDanhGia_Insert]";
-			sqlCommand.CommandType = CommandType.StoredProcedure;
+            sqlCommand.CommandType = CommandType.StoredProcedure;
 
-			// Use connection object of base class
-			sqlCommand.Connection = MainConnection;
+            // Use connection object of base class
+            sqlCommand.Connection = MainConnection;
 
-			try
-			{
-                
-				sqlCommand.Parameters.Add(new SqlParameter("@MASV", SqlDbType.NVarChar, 50, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, businessObject.MASV));
-				sqlCommand.Parameters.Add(new SqlParameter("@MASVDANHGIA", SqlDbType.NVarChar, 50, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, businessObject.MASVDANHGIA));
-				sqlCommand.Parameters.Add(new SqlParameter("@TC11", SqlDbType.SmallInt, 2, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, businessObject.Tc11));
-				sqlCommand.Parameters.Add(new SqlParameter("@TC12", SqlDbType.SmallInt, 2, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, businessObject.Tc12));
-				sqlCommand.Parameters.Add(new SqlParameter("@TC13", SqlDbType.SmallInt, 2, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, businessObject.Tc13));
-				sqlCommand.Parameters.Add(new SqlParameter("@TC21", SqlDbType.SmallInt, 2, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, businessObject.Tc21));
-				sqlCommand.Parameters.Add(new SqlParameter("@TC22", SqlDbType.SmallInt, 2, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, businessObject.Tc22));
-				sqlCommand.Parameters.Add(new SqlParameter("@TC31", SqlDbType.SmallInt, 2, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, businessObject.Tc31));
-				sqlCommand.Parameters.Add(new SqlParameter("@TC32", SqlDbType.SmallInt, 2, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, businessObject.Tc32));
-				sqlCommand.Parameters.Add(new SqlParameter("@TC33", SqlDbType.SmallInt, 2, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, businessObject.Tc33));
-				sqlCommand.Parameters.Add(new SqlParameter("@TC41", SqlDbType.SmallInt, 2, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, businessObject.Tc41));
-				sqlCommand.Parameters.Add(new SqlParameter("@TC42", SqlDbType.SmallInt, 2, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, businessObject.Tc42));
-				sqlCommand.Parameters.Add(new SqlParameter("@TC43", SqlDbType.SmallInt, 2, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, businessObject.Tc43));
-				sqlCommand.Parameters.Add(new SqlParameter("@TC51", SqlDbType.SmallInt, 2, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, businessObject.Tc51));
-				sqlCommand.Parameters.Add(new SqlParameter("@TC52", SqlDbType.SmallInt, 2, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, businessObject.Tc52));
-				sqlCommand.Parameters.Add(new SqlParameter("@TC53", SqlDbType.SmallInt, 2, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, businessObject.Tc53));
+            try
+            {
 
-								
-				MainConnection.Open();
-				
-				sqlCommand.ExecuteNonQuery();
-                
-				return true;
-			}
-			catch(Exception ex)
-			{				
-				throw new Exception("KETQUADANHGIA::Insert::Error occured.", ex);
-			}
-			finally
-			{			
-				MainConnection.Close();
-				sqlCommand.Dispose();
-			}
-		}
+                sqlCommand.Parameters.Add(new SqlParameter("@MASV", SqlDbType.NVarChar, 50, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, businessObject.MASV));
+                sqlCommand.Parameters.Add(new SqlParameter("@MASVDANHGIA", SqlDbType.NVarChar, 50, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, businessObject.MASVDANHGIA));
+                sqlCommand.Parameters.Add(new SqlParameter("@TC11", SqlDbType.SmallInt, 2, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, businessObject.Tc11));
+                sqlCommand.Parameters.Add(new SqlParameter("@TC12", SqlDbType.SmallInt, 2, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, businessObject.Tc12));
+                sqlCommand.Parameters.Add(new SqlParameter("@TC13", SqlDbType.SmallInt, 2, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, businessObject.Tc13));
+                sqlCommand.Parameters.Add(new SqlParameter("@TC21", SqlDbType.SmallInt, 2, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, businessObject.Tc21));
+                sqlCommand.Parameters.Add(new SqlParameter("@TC22", SqlDbType.SmallInt, 2, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, businessObject.Tc22));
+                sqlCommand.Parameters.Add(new SqlParameter("@TC23", SqlDbType.SmallInt, 2, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, businessObject.Tc23));
+                sqlCommand.Parameters.Add(new SqlParameter("@TC31", SqlDbType.SmallInt, 2, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, businessObject.Tc31));
+                sqlCommand.Parameters.Add(new SqlParameter("@TC32", SqlDbType.SmallInt, 2, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, businessObject.Tc32));
+                sqlCommand.Parameters.Add(new SqlParameter("@TC33", SqlDbType.SmallInt, 2, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, businessObject.Tc33));
+                sqlCommand.Parameters.Add(new SqlParameter("@TC34", SqlDbType.SmallInt, 2, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, businessObject.Tc34));
+                sqlCommand.Parameters.Add(new SqlParameter("@TC35", SqlDbType.SmallInt, 2, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, businessObject.Tc35));
+                sqlCommand.Parameters.Add(new SqlParameter("@TC36", SqlDbType.SmallInt, 2, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, businessObject.Tc36));
+                sqlCommand.Parameters.Add(new SqlParameter("@TC37", SqlDbType.SmallInt, 2, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, businessObject.Tc37));
+                sqlCommand.Parameters.Add(new SqlParameter("@TC38", SqlDbType.SmallInt, 2, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, businessObject.Tc38));
+                sqlCommand.Parameters.Add(new SqlParameter("@TC39", SqlDbType.SmallInt, 2, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, businessObject.Tc39));
+                sqlCommand.Parameters.Add(new SqlParameter("@TC310", SqlDbType.SmallInt, 2, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, businessObject.Tc310));
+                sqlCommand.Parameters.Add(new SqlParameter("@TC311", SqlDbType.SmallInt, 2, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, businessObject.Tc311));
 
-         /// <summary>
+                sqlCommand.Parameters.Add(new SqlParameter("@TC41", SqlDbType.SmallInt, 2, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, businessObject.Tc41));
+                sqlCommand.Parameters.Add(new SqlParameter("@TC42", SqlDbType.SmallInt, 2, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, businessObject.Tc42));
+                sqlCommand.Parameters.Add(new SqlParameter("@TC51", SqlDbType.SmallInt, 2, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, businessObject.Tc51));
+                sqlCommand.Parameters.Add(new SqlParameter("@TC52", SqlDbType.SmallInt, 2, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, businessObject.Tc52));
+                sqlCommand.Parameters.Add(new SqlParameter("@TC53", SqlDbType.SmallInt, 2, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, businessObject.Tc53));
+
+
+                MainConnection.Open();
+
+                sqlCommand.ExecuteNonQuery();
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("KETQUADANHGIA::Insert::Error occured.", ex);
+            }
+            finally
+            {
+                MainConnection.Close();
+                sqlCommand.Dispose();
+            }
+        }
+
+        /// <summary>
         /// update row in the table
         /// </summary>
         /// <param name="businessObject">business object</param>
@@ -95,25 +104,34 @@ namespace DatabaseDAL.DataLayer
 
             try
             {
-                
-				sqlCommand.Parameters.Add(new SqlParameter("@MASV", SqlDbType.NVarChar, 50, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, businessObject.MASV));
-				sqlCommand.Parameters.Add(new SqlParameter("@MASVDANHGIA", SqlDbType.NVarChar, 50, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, businessObject.MASVDANHGIA));
-				sqlCommand.Parameters.Add(new SqlParameter("@TC11", SqlDbType.SmallInt, 2, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, businessObject.Tc11));
-				sqlCommand.Parameters.Add(new SqlParameter("@TC12", SqlDbType.SmallInt, 2, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, businessObject.Tc12));
-				sqlCommand.Parameters.Add(new SqlParameter("@TC13", SqlDbType.SmallInt, 2, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, businessObject.Tc13));
-				sqlCommand.Parameters.Add(new SqlParameter("@TC21", SqlDbType.SmallInt, 2, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, businessObject.Tc21));
-				sqlCommand.Parameters.Add(new SqlParameter("@TC22", SqlDbType.SmallInt, 2, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, businessObject.Tc22));
-				sqlCommand.Parameters.Add(new SqlParameter("@TC31", SqlDbType.SmallInt, 2, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, businessObject.Tc31));
-				sqlCommand.Parameters.Add(new SqlParameter("@TC32", SqlDbType.SmallInt, 2, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, businessObject.Tc32));
-				sqlCommand.Parameters.Add(new SqlParameter("@TC33", SqlDbType.SmallInt, 2, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, businessObject.Tc33));
-				sqlCommand.Parameters.Add(new SqlParameter("@TC41", SqlDbType.SmallInt, 2, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, businessObject.Tc41));
-				sqlCommand.Parameters.Add(new SqlParameter("@TC42", SqlDbType.SmallInt, 2, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, businessObject.Tc42));
-				sqlCommand.Parameters.Add(new SqlParameter("@TC43", SqlDbType.SmallInt, 2, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, businessObject.Tc43));
-				sqlCommand.Parameters.Add(new SqlParameter("@TC51", SqlDbType.SmallInt, 2, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, businessObject.Tc51));
-				sqlCommand.Parameters.Add(new SqlParameter("@TC52", SqlDbType.SmallInt, 2, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, businessObject.Tc52));
-				sqlCommand.Parameters.Add(new SqlParameter("@TC53", SqlDbType.SmallInt, 2, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, businessObject.Tc53));
 
-                
+                sqlCommand.Parameters.Add(new SqlParameter("@MASV", SqlDbType.NVarChar, 50, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, businessObject.MASV));
+                sqlCommand.Parameters.Add(new SqlParameter("@MASVDANHGIA", SqlDbType.NVarChar, 50, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, businessObject.MASVDANHGIA));
+                sqlCommand.Parameters.Add(new SqlParameter("@TC11", SqlDbType.SmallInt, 2, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, businessObject.Tc11));
+                sqlCommand.Parameters.Add(new SqlParameter("@TC12", SqlDbType.SmallInt, 2, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, businessObject.Tc12));
+                sqlCommand.Parameters.Add(new SqlParameter("@TC13", SqlDbType.SmallInt, 2, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, businessObject.Tc13));
+                sqlCommand.Parameters.Add(new SqlParameter("@TC21", SqlDbType.SmallInt, 2, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, businessObject.Tc21));
+                sqlCommand.Parameters.Add(new SqlParameter("@TC22", SqlDbType.SmallInt, 2, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, businessObject.Tc22));
+                sqlCommand.Parameters.Add(new SqlParameter("@TC23", SqlDbType.SmallInt, 2, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, businessObject.Tc23));
+                sqlCommand.Parameters.Add(new SqlParameter("@TC31", SqlDbType.SmallInt, 2, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, businessObject.Tc31));
+                sqlCommand.Parameters.Add(new SqlParameter("@TC32", SqlDbType.SmallInt, 2, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, businessObject.Tc32));
+                sqlCommand.Parameters.Add(new SqlParameter("@TC33", SqlDbType.SmallInt, 2, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, businessObject.Tc33));
+                sqlCommand.Parameters.Add(new SqlParameter("@TC34", SqlDbType.SmallInt, 2, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, businessObject.Tc34));
+                sqlCommand.Parameters.Add(new SqlParameter("@TC35", SqlDbType.SmallInt, 2, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, businessObject.Tc35));
+                sqlCommand.Parameters.Add(new SqlParameter("@TC36", SqlDbType.SmallInt, 2, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, businessObject.Tc36));
+                sqlCommand.Parameters.Add(new SqlParameter("@TC37", SqlDbType.SmallInt, 2, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, businessObject.Tc37));
+                sqlCommand.Parameters.Add(new SqlParameter("@TC38", SqlDbType.SmallInt, 2, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, businessObject.Tc38));
+                sqlCommand.Parameters.Add(new SqlParameter("@TC39", SqlDbType.SmallInt, 2, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, businessObject.Tc39));
+                sqlCommand.Parameters.Add(new SqlParameter("@TC310", SqlDbType.SmallInt, 2, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, businessObject.Tc310));
+                sqlCommand.Parameters.Add(new SqlParameter("@TC311", SqlDbType.SmallInt, 2, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, businessObject.Tc311));
+
+                sqlCommand.Parameters.Add(new SqlParameter("@TC41", SqlDbType.SmallInt, 2, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, businessObject.Tc41));
+                sqlCommand.Parameters.Add(new SqlParameter("@TC42", SqlDbType.SmallInt, 2, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, businessObject.Tc42));
+                sqlCommand.Parameters.Add(new SqlParameter("@TC51", SqlDbType.SmallInt, 2, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, businessObject.Tc51));
+                sqlCommand.Parameters.Add(new SqlParameter("@TC52", SqlDbType.SmallInt, 2, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, businessObject.Tc52));
+                sqlCommand.Parameters.Add(new SqlParameter("@TC53", SqlDbType.SmallInt, 2, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, businessObject.Tc53));
+
+
                 MainConnection.Open();
 
                 sqlCommand.ExecuteNonQuery();
@@ -168,7 +186,7 @@ namespace DatabaseDAL.DataLayer
                 throw new Exception("KETQUADANHGIA::SelectByPrimaryKey::Error occured.", ex);
             }
             finally
-            {             
+            {
                 MainConnection.Close();
                 sqlCommand.Dispose();
             }
@@ -193,12 +211,12 @@ namespace DatabaseDAL.DataLayer
 
                 IDataReader dataReader = sqlCommand.ExecuteReader();
 
-                
-                    KETQUADANHGIA businessObject = new KETQUADANHGIA();
 
-                    return PopulateObjectsFromReader(dataReader);
-             
-                
+                KETQUADANHGIA businessObject = new KETQUADANHGIA();
+
+                return PopulateObjectsFromReader(dataReader);
+
+
             }
             catch (Exception ex)
             {
@@ -225,14 +243,14 @@ namespace DatabaseDAL.DataLayer
             {
 
                 sqlCommand.Parameters.Add(new SqlParameter("@masvdanhgia", _masvdanhgia));
-               
+
 
                 MainConnection.Open();
 
                 IDataReader dataReader = sqlCommand.ExecuteReader();
-                 
-                    return PopulateObjectsFromReader(dataReader);
-                
+
+                return PopulateObjectsFromReader(dataReader);
+
             }
             catch (Exception ex)
             {
@@ -261,7 +279,7 @@ namespace DatabaseDAL.DataLayer
 
             try
             {
-                
+
                 MainConnection.Open();
 
                 IDataReader dataReader = sqlCommand.ExecuteReader();
@@ -270,7 +288,7 @@ namespace DatabaseDAL.DataLayer
 
             }
             catch (Exception ex)
-            {                
+            {
                 throw new Exception("KETQUADANHGIA::SelectAll::Error occured.", ex);
             }
             finally
@@ -304,7 +322,7 @@ namespace DatabaseDAL.DataLayer
                 sqlCommand.Parameters.Add(new SqlParameter("@Value", value));
 
                 MainConnection.Open();
-                
+
                 IDataReader dataReader = sqlCommand.ExecuteReader();
 
                 return PopulateObjectsFromReader(dataReader);
@@ -386,7 +404,7 @@ namespace DatabaseDAL.DataLayer
                 throw new Exception("KETQUADANHGIA::DeleteByKey::Error occured.", ex);
             }
             finally
-            {                
+            {
                 MainConnection.Close();
                 sqlCommand.Dispose();
             }
@@ -413,7 +431,7 @@ namespace DatabaseDAL.DataLayer
 
                 sqlCommand.Parameters.Add(new SqlParameter("@FieldName", fieldName));
                 sqlCommand.Parameters.Add(new SqlParameter("@Value", value));
-                
+
                 MainConnection.Open();
 
                 sqlCommand.ExecuteNonQuery();
@@ -422,11 +440,11 @@ namespace DatabaseDAL.DataLayer
 
             }
             catch (Exception ex)
-            {                
+            {
                 throw new Exception("KETQUADANHGIA::DeleteByField::Error occured.", ex);
             }
             finally
-            {             
+            {
                 MainConnection.Close();
                 sqlCommand.Dispose();
             }
@@ -446,85 +464,118 @@ namespace DatabaseDAL.DataLayer
         {
 
 
-				if (!dataReader.IsDBNull(dataReader.GetOrdinal(KETQUADANHGIA.KETQUADANHGIAFields.MASV.ToString())))
-				{
-					businessObject.MASV = dataReader.GetString(dataReader.GetOrdinal(KETQUADANHGIA.KETQUADANHGIAFields.MASV.ToString()));
-				}
+            if (!dataReader.IsDBNull(dataReader.GetOrdinal(KETQUADANHGIA.KETQUADANHGIAFields.MASV.ToString())))
+            {
+                businessObject.MASV = dataReader.GetString(dataReader.GetOrdinal(KETQUADANHGIA.KETQUADANHGIAFields.MASV.ToString()));
+            }
 
-				if (!dataReader.IsDBNull(dataReader.GetOrdinal(KETQUADANHGIA.KETQUADANHGIAFields.MASVDANHGIA.ToString())))
-				{
-					businessObject.MASVDANHGIA = dataReader.GetString(dataReader.GetOrdinal(KETQUADANHGIA.KETQUADANHGIAFields.MASVDANHGIA.ToString()));
-				}
+            if (!dataReader.IsDBNull(dataReader.GetOrdinal(KETQUADANHGIA.KETQUADANHGIAFields.MASVDANHGIA.ToString())))
+            {
+                businessObject.MASVDANHGIA = dataReader.GetString(dataReader.GetOrdinal(KETQUADANHGIA.KETQUADANHGIAFields.MASVDANHGIA.ToString()));
+            }
 
-				if (!dataReader.IsDBNull(dataReader.GetOrdinal(KETQUADANHGIA.KETQUADANHGIAFields.TC11.ToString())))
-				{
-					businessObject.Tc11 = (int)dataReader.GetInt16(dataReader.GetOrdinal(KETQUADANHGIA.KETQUADANHGIAFields.TC11.ToString()));
-				}
+            if (!dataReader.IsDBNull(dataReader.GetOrdinal(KETQUADANHGIA.KETQUADANHGIAFields.TC11.ToString())))
+            {
+                businessObject.Tc11 = (int)dataReader.GetInt16(dataReader.GetOrdinal(KETQUADANHGIA.KETQUADANHGIAFields.TC11.ToString()));
+            }
 
-				if (!dataReader.IsDBNull(dataReader.GetOrdinal(KETQUADANHGIA.KETQUADANHGIAFields.TC12.ToString())))
-				{
-					businessObject.Tc12 = (int)dataReader.GetInt16(dataReader.GetOrdinal(KETQUADANHGIA.KETQUADANHGIAFields.TC12.ToString()));
-				}
+            if (!dataReader.IsDBNull(dataReader.GetOrdinal(KETQUADANHGIA.KETQUADANHGIAFields.TC12.ToString())))
+            {
+                businessObject.Tc12 = (int)dataReader.GetInt16(dataReader.GetOrdinal(KETQUADANHGIA.KETQUADANHGIAFields.TC12.ToString()));
+            }
 
-				if (!dataReader.IsDBNull(dataReader.GetOrdinal(KETQUADANHGIA.KETQUADANHGIAFields.TC13.ToString())))
-				{
-					businessObject.Tc13 = (int)dataReader.GetInt16(dataReader.GetOrdinal(KETQUADANHGIA.KETQUADANHGIAFields.TC13.ToString()));
-				}
+            if (!dataReader.IsDBNull(dataReader.GetOrdinal(KETQUADANHGIA.KETQUADANHGIAFields.TC13.ToString())))
+            {
+                businessObject.Tc13 = (int)dataReader.GetInt16(dataReader.GetOrdinal(KETQUADANHGIA.KETQUADANHGIAFields.TC13.ToString()));
+            }
 
-				if (!dataReader.IsDBNull(dataReader.GetOrdinal(KETQUADANHGIA.KETQUADANHGIAFields.TC21.ToString())))
-				{
-					businessObject.Tc21 = (int)dataReader.GetInt16(dataReader.GetOrdinal(KETQUADANHGIA.KETQUADANHGIAFields.TC21.ToString()));
-				}
+            if (!dataReader.IsDBNull(dataReader.GetOrdinal(KETQUADANHGIA.KETQUADANHGIAFields.TC21.ToString())))
+            {
+                businessObject.Tc21 = (int)dataReader.GetInt16(dataReader.GetOrdinal(KETQUADANHGIA.KETQUADANHGIAFields.TC21.ToString()));
+            }
 
-				if (!dataReader.IsDBNull(dataReader.GetOrdinal(KETQUADANHGIA.KETQUADANHGIAFields.TC22.ToString())))
-				{
-					businessObject.Tc22 = (int)dataReader.GetInt16(dataReader.GetOrdinal(KETQUADANHGIA.KETQUADANHGIAFields.TC22.ToString()));
-				}
+            if (!dataReader.IsDBNull(dataReader.GetOrdinal(KETQUADANHGIA.KETQUADANHGIAFields.TC22.ToString())))
+            {
+                businessObject.Tc22 = (int)dataReader.GetInt16(dataReader.GetOrdinal(KETQUADANHGIA.KETQUADANHGIAFields.TC22.ToString()));
+            }
 
-				if (!dataReader.IsDBNull(dataReader.GetOrdinal(KETQUADANHGIA.KETQUADANHGIAFields.TC31.ToString())))
-				{
-					businessObject.Tc31 = (int)dataReader.GetInt16(dataReader.GetOrdinal(KETQUADANHGIA.KETQUADANHGIAFields.TC31.ToString()));
-				}
+            if (!dataReader.IsDBNull(dataReader.GetOrdinal(KETQUADANHGIA.KETQUADANHGIAFields.TC23.ToString())))
+            {
+                businessObject.Tc23 = (int)dataReader.GetInt16(dataReader.GetOrdinal(KETQUADANHGIA.KETQUADANHGIAFields.TC23.ToString()));
+            }
+            if (!dataReader.IsDBNull(dataReader.GetOrdinal(KETQUADANHGIA.KETQUADANHGIAFields.TC31.ToString())))
+            {
+                businessObject.Tc31 = (int)dataReader.GetInt16(dataReader.GetOrdinal(KETQUADANHGIA.KETQUADANHGIAFields.TC31.ToString()));
+            }
 
-				if (!dataReader.IsDBNull(dataReader.GetOrdinal(KETQUADANHGIA.KETQUADANHGIAFields.TC32.ToString())))
-				{
-					businessObject.Tc32 = (int)dataReader.GetInt16(dataReader.GetOrdinal(KETQUADANHGIA.KETQUADANHGIAFields.TC32.ToString()));
-				}
+            if (!dataReader.IsDBNull(dataReader.GetOrdinal(KETQUADANHGIA.KETQUADANHGIAFields.TC32.ToString())))
+            {
+                businessObject.Tc32 = (int)dataReader.GetInt16(dataReader.GetOrdinal(KETQUADANHGIA.KETQUADANHGIAFields.TC32.ToString()));
+            }
 
-				if (!dataReader.IsDBNull(dataReader.GetOrdinal(KETQUADANHGIA.KETQUADANHGIAFields.TC33.ToString())))
-				{
-					businessObject.Tc33 = (int)dataReader.GetInt16(dataReader.GetOrdinal(KETQUADANHGIA.KETQUADANHGIAFields.TC33.ToString()));
-				}
+            if (!dataReader.IsDBNull(dataReader.GetOrdinal(KETQUADANHGIA.KETQUADANHGIAFields.TC33.ToString())))
+            {
+                businessObject.Tc33 = (int)dataReader.GetInt16(dataReader.GetOrdinal(KETQUADANHGIA.KETQUADANHGIAFields.TC33.ToString()));
+            }
+            if (!dataReader.IsDBNull(dataReader.GetOrdinal(KETQUADANHGIA.KETQUADANHGIAFields.TC34.ToString())))
+            {
+                businessObject.Tc34 = (int)dataReader.GetInt16(dataReader.GetOrdinal(KETQUADANHGIA.KETQUADANHGIAFields.TC34.ToString()));
+            }
+            if (!dataReader.IsDBNull(dataReader.GetOrdinal(KETQUADANHGIA.KETQUADANHGIAFields.TC35.ToString())))
+            {
+                businessObject.Tc35 = (int)dataReader.GetInt16(dataReader.GetOrdinal(KETQUADANHGIA.KETQUADANHGIAFields.TC35.ToString()));
+            }
+            if (!dataReader.IsDBNull(dataReader.GetOrdinal(KETQUADANHGIA.KETQUADANHGIAFields.TC36.ToString())))
+            {
+                businessObject.Tc36 = (int)dataReader.GetInt16(dataReader.GetOrdinal(KETQUADANHGIA.KETQUADANHGIAFields.TC36.ToString()));
+            }
+            if (!dataReader.IsDBNull(dataReader.GetOrdinal(KETQUADANHGIA.KETQUADANHGIAFields.TC37.ToString())))
+            {
+                businessObject.Tc37 = (int)dataReader.GetInt16(dataReader.GetOrdinal(KETQUADANHGIA.KETQUADANHGIAFields.TC37.ToString()));
+            }
 
-				if (!dataReader.IsDBNull(dataReader.GetOrdinal(KETQUADANHGIA.KETQUADANHGIAFields.TC41.ToString())))
-				{
-					businessObject.Tc41 = (int)dataReader.GetInt16(dataReader.GetOrdinal(KETQUADANHGIA.KETQUADANHGIAFields.TC41.ToString()));
-				}
+            if (!dataReader.IsDBNull(dataReader.GetOrdinal(KETQUADANHGIA.KETQUADANHGIAFields.TC38.ToString())))
+            {
+                businessObject.Tc38 = (int)dataReader.GetInt16(dataReader.GetOrdinal(KETQUADANHGIA.KETQUADANHGIAFields.TC38.ToString()));
+            }
+            if (!dataReader.IsDBNull(dataReader.GetOrdinal(KETQUADANHGIA.KETQUADANHGIAFields.TC39.ToString())))
+            {
+                businessObject.Tc39 = (int)dataReader.GetInt16(dataReader.GetOrdinal(KETQUADANHGIA.KETQUADANHGIAFields.TC39.ToString()));
+            }
 
-				if (!dataReader.IsDBNull(dataReader.GetOrdinal(KETQUADANHGIA.KETQUADANHGIAFields.TC42.ToString())))
-				{
-					businessObject.Tc42 = (int)dataReader.GetInt16(dataReader.GetOrdinal(KETQUADANHGIA.KETQUADANHGIAFields.TC42.ToString()));
-				}
+            if (!dataReader.IsDBNull(dataReader.GetOrdinal(KETQUADANHGIA.KETQUADANHGIAFields.TC310.ToString())))
+            {
+                businessObject.Tc310 = (int)dataReader.GetInt16(dataReader.GetOrdinal(KETQUADANHGIA.KETQUADANHGIAFields.TC310.ToString()));
+            }
+            if (!dataReader.IsDBNull(dataReader.GetOrdinal(KETQUADANHGIA.KETQUADANHGIAFields.TC311.ToString())))
+            {
+                businessObject.Tc311 = (int)dataReader.GetInt16(dataReader.GetOrdinal(KETQUADANHGIA.KETQUADANHGIAFields.TC311.ToString()));
+            }
 
-				if (!dataReader.IsDBNull(dataReader.GetOrdinal(KETQUADANHGIA.KETQUADANHGIAFields.TC43.ToString())))
-				{
-					businessObject.Tc43 = (int)dataReader.GetInt16(dataReader.GetOrdinal(KETQUADANHGIA.KETQUADANHGIAFields.TC43.ToString()));
-				}
+            if (!dataReader.IsDBNull(dataReader.GetOrdinal(KETQUADANHGIA.KETQUADANHGIAFields.TC41.ToString())))
+            {
+                businessObject.Tc41 = (int)dataReader.GetInt16(dataReader.GetOrdinal(KETQUADANHGIA.KETQUADANHGIAFields.TC41.ToString()));
+            }
+            if (!dataReader.IsDBNull(dataReader.GetOrdinal(KETQUADANHGIA.KETQUADANHGIAFields.TC42.ToString())))
+            {
+                businessObject.Tc42 = (int)dataReader.GetInt16(dataReader.GetOrdinal(KETQUADANHGIA.KETQUADANHGIAFields.TC42.ToString()));
+            }
 
-				if (!dataReader.IsDBNull(dataReader.GetOrdinal(KETQUADANHGIA.KETQUADANHGIAFields.TC51.ToString())))
-				{
-					businessObject.Tc51 = (int)dataReader.GetInt16(dataReader.GetOrdinal(KETQUADANHGIA.KETQUADANHGIAFields.TC51.ToString()));
-				}
 
-				if (!dataReader.IsDBNull(dataReader.GetOrdinal(KETQUADANHGIA.KETQUADANHGIAFields.TC52.ToString())))
-				{
-					businessObject.Tc52 = (int)dataReader.GetInt16(dataReader.GetOrdinal(KETQUADANHGIA.KETQUADANHGIAFields.TC52.ToString()));
-				}
+            if (!dataReader.IsDBNull(dataReader.GetOrdinal(KETQUADANHGIA.KETQUADANHGIAFields.TC51.ToString())))
+            {
+                businessObject.Tc51 = (int)dataReader.GetInt16(dataReader.GetOrdinal(KETQUADANHGIA.KETQUADANHGIAFields.TC51.ToString()));
+            }
 
-				if (!dataReader.IsDBNull(dataReader.GetOrdinal(KETQUADANHGIA.KETQUADANHGIAFields.TC53.ToString())))
-				{
-					businessObject.Tc53 = (int)dataReader.GetInt16(dataReader.GetOrdinal(KETQUADANHGIA.KETQUADANHGIAFields.TC53.ToString()));
-				}
+            if (!dataReader.IsDBNull(dataReader.GetOrdinal(KETQUADANHGIA.KETQUADANHGIAFields.TC52.ToString())))
+            {
+                businessObject.Tc52 = (int)dataReader.GetInt16(dataReader.GetOrdinal(KETQUADANHGIA.KETQUADANHGIAFields.TC52.ToString()));
+            }
+
+            if (!dataReader.IsDBNull(dataReader.GetOrdinal(KETQUADANHGIA.KETQUADANHGIAFields.TC53.ToString())))
+            {
+                businessObject.Tc53 = (int)dataReader.GetInt16(dataReader.GetOrdinal(KETQUADANHGIA.KETQUADANHGIAFields.TC53.ToString()));
+            }
 
 
         }
@@ -551,5 +602,5 @@ namespace DatabaseDAL.DataLayer
 
         #endregion
 
-	}
+    }
 }

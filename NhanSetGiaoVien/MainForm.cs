@@ -1,13 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
-namespace NhanXetSinhVien
+namespace NhanSetGiaoVien
 {
     public partial class MainForm : Form
     {
@@ -57,7 +51,7 @@ namespace NhanXetSinhVien
         }
         private void kQRenLuyenToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var frm = new frmKQRenLuyen();
+            var frm = new frmKQNhanSet();
             frm.Show();
             frm.TopMost = true;
         }

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 namespace DatabaseDAL.Entities
@@ -58,31 +59,32 @@ namespace DatabaseDAL.Entities
 		#endregion
 
 		#region Properties
-
+        [DisplayName("Mã SV")]
         public string MaGv
 		{
 			 get { return _maGv; }
 			 set { _maGv = value; }
 		}
 
+        [DisplayName("Tên SV")]
 		public string  TenGiaoVien
 		{
 			 get { return _tenGiaoVien; }
 			 set { _tenGiaoVien = value; }
 		}
-
+        [Browsable(false)]
 		public int  Sex
 		{
 			 get { return _sex; }
 			 set { _sex = value; }
 		}
-
+        [Browsable(false)]
 		public string  Adress
 		{
 			 get { return _adress; }
 			 set { _adress = value; }
 		}
-
+       
 		public string  UserLogin
 		{
 			 get { return _userLogin; }

@@ -1,4 +1,4 @@
-﻿namespace NhanXetSinhVien
+﻿namespace NhanSetGiaoVien
 {
     partial class ShowListData
     {

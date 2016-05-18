@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 namespace DatabaseDAL.Entities
@@ -42,13 +43,13 @@ namespace DatabaseDAL.Entities
 		#endregion
 
 		#region Properties
-
+        [DisplayName("Mã GV")]
 		public string  MASV
 		{
 			 get { return _mASV; }
 			 set { _mASV = value; }
 		}
-
+        [DisplayName("Tên GV")]
 		public string  HOTEN
 		{
 			 get { return _hOTEN; }

@@ -3,7 +3,7 @@ using System.Windows.Forms;
 using DatabaseDAL.DAO;
 using DatabaseDAL.Entities;
 
-namespace NhanXetSinhVien
+namespace NhanSetGiaoVien
 {
     public partial class frmDangNhap : Form
     {

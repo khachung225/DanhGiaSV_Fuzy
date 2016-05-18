@@ -1,14 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 using DatabaseDAL.DAO;
 
-namespace NhanXetSinhVien
+namespace NhanSetGiaoVien
 {
     public partial class ShowListData : Form
     {
@@ -21,9 +15,9 @@ namespace NhanXetSinhVien
             : this()
         {
             if (type == 1)
-                this.Text = @"Danh Sách giáo viên";
-            if (type == 2)
                 this.Text = @"Danh Sách Sinh viên";
+            if (type == 2)
+                this.Text = @"Danh Sách giáo viên";
             _type = type;
         }
         private void button1_Click(object sender, EventArgs e)

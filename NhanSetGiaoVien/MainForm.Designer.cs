@@ -1,4 +1,4 @@
-﻿namespace NhanXetSinhVien
+﻿namespace NhanSetGiaoVien
 {
     partial class MainForm
     {
@@ -113,8 +113,8 @@
             // kQRenLuyenToolStripMenuItem
             // 
             this.kQRenLuyenToolStripMenuItem.Name = "kQRenLuyenToolStripMenuItem";
-            this.kQRenLuyenToolStripMenuItem.Size = new System.Drawing.Size(93, 20);
-            this.kQRenLuyenToolStripMenuItem.Text = "KQ tốt nghiệp";
+            this.kQRenLuyenToolStripMenuItem.Size = new System.Drawing.Size(83, 20);
+            this.kQRenLuyenToolStripMenuItem.Text = "KQ nhận sét";
             this.kQRenLuyenToolStripMenuItem.Click += new System.EventHandler(this.kQRenLuyenToolStripMenuItem_Click);
             // 
             // timer1
@@ -128,12 +128,12 @@
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.Color.Red;
-            this.label15.Location = new System.Drawing.Point(158, 112);
+            this.label15.Location = new System.Drawing.Point(219, 103);
             this.label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(709, 29);
+            this.label15.Size = new System.Drawing.Size(556, 29);
             this.label15.TabIndex = 27;
-            this.label15.Text = "CHƯƠNG TRÌNH ĐÁNH GIÁ XẾP LOẠI TỐT NGHIỆP SINH VIÊN";
+            this.label15.Text = "CHƯƠNG TRÌNH ĐÁNH GIÁ XẾP LOẠI GIÁO VIÊN";
             this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label18
@@ -160,7 +160,7 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainForm";
-            this.Text = "Chương trình đánh giá tốt nghiệp Sinh Viên";
+            this.Text = "Chương trình đánh giá xếp loại giáo viên";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Activated += new System.EventHandler(this.MainForm_Activated);
             this.Load += new System.EventHandler(this.MainForm_Load);
